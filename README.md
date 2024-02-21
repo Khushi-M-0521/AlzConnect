@@ -41,7 +41,7 @@
 
 ### Steps to run the Website Application
 
-1. Add the provided(in [*"alzconnect_web"*](https://github.com/Khushi-M-0521/AlzConnect/tree/main/alzconnect_app)) files/folders inside the venv folder.
+1. Add the provided(in [*"alzconnect_web"*](https://github.com/Khushi-M-0521/AlzConnect/tree/main/alzconnect_web)) files/folders inside the venv folder.
 
 2. Download the .pth file from [here](https://drive.google.com/file/d/1uIUiL-4AsnI-dMCN_JJ6tjouW2iznYx4/view?usp=drive_link) and add it under the venv folder.
 
