@@ -18,8 +18,8 @@
 ```sh
       flutter pub get
 ```
-5. Connect your mobile device to your created folder
-6. Run the code by anyone of the following ways:
+4. Connect your mobile device to your created folder
+5. Run the code by anyone of the following ways:
     - Run -> Run Without Debugging (or just Cntrl+F5)
     - In your terminal, under the created folder, run the following and choose your connected device. 
 ```sh
