@@ -1,13 +1,15 @@
-import 'package:cross_file/src/types/interface.dart';
+//import 'package:cross_file/src/types/interface.dart';
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
+//import 'package:flutter/widgets.dart';
 import 'package:spryzen/image_get.dart';
 
-import 'package:spryzen/screens/imagescreen.dart';
-import 'package:spryzen/video_get.dart';
+//import 'package:spryzen/screens/imagescreen.dart';
+//import 'package:spryzen/video_get.dart';
 
 class mainscreen extends StatefulWidget {
-  mainscreen({super.key});
+  const mainscreen({super.key});
 
   @override
   State<mainscreen> createState() => _mainscreenState();

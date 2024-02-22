@@ -1,10 +1,13 @@
-import 'dart:developer';
+//import 'dart:developer';
+
+// ignore_for_file: constant_identifier_names
 
 import 'package:mongo_dart/mongo_dart.dart';
 
 class Data {
   static const String _MONGO_URL =
-      "mongo connection string cannot be shown due to security reasons";
+      "mongodb+srv://khushim0521:PsWEDy2wfgb3IVuU@cluster0.l0vjh51.mongodb.net/Spryzen";
+
   static const _app_coll_name = "AppData";
   static const _user_coll_name = "AppUsers";
   static DbCollection? _app_coll;
@@ -62,7 +65,7 @@ class Data {
 
   static Future<bool> changePwd(String newPwd) async {
     try {
-      var result = await _user_coll!
+      await _user_coll!
           .update(where.eq("_id", _user), modify.set("password", newPwd));
       return true;
     } catch (e) {
@@ -81,10 +84,10 @@ class Data {
 
   static Future<bool> insertImage(String img64) async {
     try {
-      var result = await _app_coll!
+      await _app_coll!
           .update(where.eq("_id", _user), modify.push("photos", img64));
       _doc['photos'].add(img64);
-      Map<String, dynamic> d = _doc;
+      //Map<String, dynamic> d = _doc;
       return true;
     } catch (e) {
       return false;
@@ -93,16 +96,16 @@ class Data {
 
   static List sendImages() {
     Map<String, dynamic>? d = _doc;
-    print(d?['photos'].toList());
-    return d?['photos'].toList();
+    //print(d['photos'].toList());
+    return d['photos'].toList();
   }
 
   static Future<bool> insertVideo(String img64) async {
     try {
-      var result = await _app_coll!
+      await _app_coll!
           .update(where.eq("_id", _user), modify.push("videos", img64));
       _doc['videos'].add(img64);
-      Map<String, dynamic> d = _doc;
+      //Map<String, dynamic> d = _doc;
       return true;
     } catch (e) {
       return false;
@@ -116,10 +119,10 @@ class Data {
 
   static Future<bool> insertAudio(String img64) async {
     try {
-      var result = await _app_coll!
+      await _app_coll!
           .update(where.eq("_id", _user), modify.push("voices", img64));
       _doc['voices'].add(img64);
-      Map<String, dynamic> d = _doc;
+      //Map<String, dynamic> d = _doc;
       return true;
     } catch (e) {
       return false;

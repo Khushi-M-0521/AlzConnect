@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 import 'package:spryzen/screens/username.dart';
@@ -7,7 +9,10 @@ import 'package:spryzen/screens/about.dart';
 
 import 'data.dart';
 
+// ignore: must_be_immutable
 class listset extends StatelessWidget {
+  listset({super.key});
+  
   final String usernametile = "Account";
 
   String email2id = Data.getemailid().toString();
@@ -15,7 +20,7 @@ class listset extends StatelessWidget {
   final String changepasstile = "CHANGEPASSWORD";
   final String abouttile = "ABOUT";
 
-  listset();
+
   void user_name(BuildContext ctx, title) {
     Navigator.of(ctx).push(
       MaterialPageRoute(
@@ -48,19 +53,19 @@ class listset extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    Future<String> emailidt = Data.getemailid();
+    //Future<String> emailidt = Data.getemailid();
     return InkWell(
       child: Column(
         children: [
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.account_circle_rounded,
               size: 36,
             ),
             title: Text(usernametile),
             onTap: () => user_name(context, usernametile),
           ),
-          ListTile(
+          const ListTile(
             leading: Icon(
               Icons.email_sharp,
             ),
@@ -72,18 +77,18 @@ class listset extends StatelessWidget {
             ),
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.password_rounded,
             ),
             onTap: () => pass_word(context, changepasstile),
-            title: Text('Change password'),
+            title: const Text('Change password'),
           ),
           ListTile(
-            leading: Icon(
+            leading: const Icon(
               Icons.info,
             ),
             onTap: () => about(context, abouttile),
-            title: Text(
+            title: const Text(
               'About',
             ),
           ),

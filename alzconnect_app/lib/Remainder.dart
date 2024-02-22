@@ -1,9 +1,13 @@
+// ignore_for_file: file_names, camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:timezone/data/latest.dart' as tz;
 import 'package:spryzen/notification.dart';
-import 'package:timezone/timezone.dart' as tz;
+//import 'package:timezone/timezone.dart' as tz;
 
 class Reminder_Page extends StatefulWidget {
+  const Reminder_Page({super.key});
+
   @override
   State<Reminder_Page> createState() => _Reminder_PageState();
 }
@@ -21,9 +25,10 @@ class _Reminder_PageState extends State<Reminder_Page> {
     tz.initializeTimeZones();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
-        appBar: AppBar(title: Text("Reminder")),
+        appBar: AppBar(title: const Text("Reminder")),
         body: SingleChildScrollView(
           child: Padding(
             padding: const EdgeInsets.all(80.0),
@@ -31,8 +36,8 @@ class _Reminder_PageState extends State<Reminder_Page> {
               child: Form(
                 child: Column(
                   children: [
-                    Text('Enter the text to be reminded'),
-                    SizedBox(
+                    const Text('Enter the text to be reminded'),
+                    const SizedBox(
                       height: 20,
                     ),
                     TextFormField(
@@ -46,11 +51,11 @@ class _Reminder_PageState extends State<Reminder_Page> {
                                 right: Radius.circular(4)),
                           ),
                         )),
-                    SizedBox(height: 20),
-                    Text(" upload the voice"),
+                    const SizedBox(height: 20),
+                    const Text(" upload the voice"),
                     ElevatedButton(
-                        onPressed: () {}, child: Text('Upload voice')),
-                    SizedBox(
+                        onPressed: () {}, child: const Text('Upload voice')),
+                    const SizedBox(
                       height: 20,
                     ),
                     Row(
@@ -69,7 +74,7 @@ class _Reminder_PageState extends State<Reminder_Page> {
                             ),
                           ),
                         ),
-                        SizedBox(width: 20),
+                        const SizedBox(width: 20),
                         Container(
                           height: 40,
                           width: 60,
@@ -98,16 +103,16 @@ class _Reminder_PageState extends State<Reminder_Page> {
                         notificationservices.schedulenotificationAtTime(
                             'Notification', textcontroller.text, customTime);
                       },
-                      child: Text('Schedule reminder'),
+                      child: const Text('Schedule reminder'),
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     ElevatedButton(
                       onPressed: () {
                         notificationservices.stopnotification();
                       },
-                      child: Text('Stop notifications'),
+                      child: const Text('Stop notifications'),
                     )
                   ],
                 ),

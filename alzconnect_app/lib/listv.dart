@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:spryzen/screens/imagescreen.dart';
 import 'package:spryzen/screens/setting_screen.dart';
@@ -26,7 +28,7 @@ class liste extends StatelessWidget {
 
   void newscreenw(BuildContext cont) {
     Navigator.of(cont).push(MaterialPageRoute(builder: (_) {
-      return Reminder_Page();
+      return const Reminder_Page();
     }));
   }
 
@@ -35,7 +37,7 @@ class liste extends StatelessWidget {
     return Column(
       children: [
         ListTile(
-          leading: Icon(Icons.add_a_photo),
+          leading: const Icon(Icons.add_a_photo),
           title: Text(
             "Add photo",
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -46,7 +48,7 @@ class liste extends StatelessWidget {
           },
         ),
         ListTile(
-          leading: Icon(Icons.video_camera_front_rounded),
+          leading: const Icon(Icons.video_camera_front_rounded),
           title: Text(
             "Add video",
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -55,7 +57,7 @@ class liste extends StatelessWidget {
           onTap: () => video(context),
         ),
         ListTile(
-          leading: Icon(Icons.alarm_add_rounded),
+          leading: const Icon(Icons.alarm_add_rounded),
           title: Text(
             "Add remainder",
             style: Theme.of(context).textTheme.titleLarge!.copyWith(
@@ -66,7 +68,7 @@ class liste extends StatelessWidget {
           },
         ),
         ListTile(
-          leading: Icon(Icons.settings),
+          leading: const Icon(Icons.settings),
           title: Text(
             "Settings",
             style: Theme.of(context).textTheme.titleLarge!.copyWith(

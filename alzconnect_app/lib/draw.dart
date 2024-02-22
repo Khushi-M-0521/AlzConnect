@@ -1,3 +1,5 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:spryzen/listv.dart';
 
@@ -17,7 +19,7 @@ class appdrawer extends StatelessWidget {
               children: [
                 const Icon(Icons.health_and_safety_sharp,
                     size: 24, color: Colors.white),
-                SizedBox(width: 18),
+                const SizedBox(width: 18),
                 Text(
                   "SPRYZEN",
                   style: Theme.of(context)

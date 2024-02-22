@@ -1,14 +1,14 @@
+// ignore_for_file: prefer_final_fields, deprecated_member_use
+
 import 'package:flutter/material.dart';
 import 'package:flutter_local_notifications/flutter_local_notifications.dart';
-import 'package:shared_preferences/shared_preferences.dart';
+//import 'package:shared_preferences/shared_preferences.dart';
 import 'package:timezone/timezone.dart' as tz;
-import 'package:timezone/data/latest.dart' as tz;
+//import 'package:timezone/data/latest.dart' as tz;
 
 class Notificationservices {
-  FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin =
-      FlutterLocalNotificationsPlugin();
-  AndroidInitializationSettings _androidInitializationSettings =
-      AndroidInitializationSettings('@mipmap/ic_launcher');
+  FlutterLocalNotificationsPlugin _flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
+  AndroidInitializationSettings _androidInitializationSettings = const AndroidInitializationSettings('@mipmap/ic_launcher');
   Notificationservices()
       : _flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin() {
     initialiseNotifications();

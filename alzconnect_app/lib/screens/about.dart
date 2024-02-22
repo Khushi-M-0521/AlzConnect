@@ -1,17 +1,18 @@
-import 'dart:io';
+//import 'dart:io';
 
 import 'package:flutter/material.dart';
 
 class About extends StatelessWidget {
+  const About(this.abouttile, {super.key});
+
   final String abouttile;
-  About(this.abouttile);
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: Text(abouttile)),
-      body: Padding(
-        padding: const EdgeInsets.all(16.0),
+      body: const Padding(
+        padding: EdgeInsets.all(16.0),
         child: SingleChildScrollView(
           child: Column(
             children: [

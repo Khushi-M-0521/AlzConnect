@@ -1,11 +1,15 @@
+// ignore_for_file: camel_case_types, non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 import 'package:spryzen/app_bar.dart';
-import 'package:spryzen/screens/mainscreen.dart';
+//import 'package:spryzen/screens/mainscreen.dart';
 import 'package:spryzen/screens/signupscreen.dart';
 
 import '../data.dart';
 
 class Log_in extends StatefulWidget {
+  const Log_in({super.key});
+
   @override
   State<Log_in> createState() => _Log_inState();
 }
@@ -13,10 +17,12 @@ class Log_in extends StatefulWidget {
 class _Log_inState extends State<Log_in> {
   bool is_visibility = false;
   bool is_visibility2 = false;
-  String _name = "";
-  TextEditingController _usernamee = TextEditingController();
-  TextEditingController _passwordd = TextEditingController();
+  //String _name = "";
+  final TextEditingController _usernamee = TextEditingController();
+  final TextEditingController _passwordd = TextEditingController();
   final formkey = GlobalKey<FormState>();
+  
+  @override
   void dispose() {
     _usernamee.dispose();
     _passwordd.dispose();
@@ -27,7 +33,7 @@ class _Log_inState extends State<Log_in> {
     Navigator.of(ctxxxxx).push(
       MaterialPageRoute(
         builder: (_) {
-          return APPBAR();
+          return const APPBAR();
         },
       ),
     );
@@ -37,7 +43,7 @@ class _Log_inState extends State<Log_in> {
     Navigator.of(ctxxxxx).push(
       MaterialPageRoute(
         builder: (_) {
-          return Sign_up();
+          return const Sign_up();
         },
       ),
     );
@@ -45,7 +51,7 @@ class _Log_inState extends State<Log_in> {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    //final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
         body: Padding(
       padding: const EdgeInsets.all(8.0),
@@ -76,7 +82,7 @@ class _Log_inState extends State<Log_in> {
                       hintText: "Username",
                     ),
                   ),
-                  Padding(padding: EdgeInsets.all(10)),
+                  const Padding(padding: EdgeInsets.all(10)),
                   TextFormField(
                     controller: _passwordd,
                     validator: (value) {
@@ -89,7 +95,7 @@ class _Log_inState extends State<Log_in> {
                     obscureText: !is_visibility2,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                      prefixIcon: Icon(Icons.password_outlined),
+                      prefixIcon: const Icon(Icons.password_outlined),
                       suffixIcon: IconButton(
                         onPressed: () {
                           setState(() {
@@ -97,17 +103,17 @@ class _Log_inState extends State<Log_in> {
                           });
                         },
                         icon: is_visibility2
-                            ? Icon(
+                            ? const Icon(
                                 Icons.visibility,
                                 color: Colors.blue,
                               )
-                            : Icon(
+                            : const Icon(
                                 Icons.visibility_off,
                                 color: Colors.grey,
                               ),
                       ),
-                      contentPadding: EdgeInsets.all(15),
-                      border: OutlineInputBorder(
+                      contentPadding:const  EdgeInsets.all(15),
+                      border: const OutlineInputBorder(
                         borderRadius: BorderRadius.horizontal(
                             left: Radius.circular(4),
                             right: Radius.circular(4)),
@@ -115,7 +121,7 @@ class _Log_inState extends State<Log_in> {
                       hintText: "Password",
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   ElevatedButton(
@@ -124,19 +130,20 @@ class _Log_inState extends State<Log_in> {
                         String password = _passwordd.text.toString();
                         if (formkey.currentState!.validate() &&
                             await Data.login(username, password)) {
+                          // ignore: use_build_context_synchronously
                           settings(context);
                         }
                       },
-                      child: Text("Login")),
-                  SizedBox(
+                      child: const Text("Login")),
+                  const SizedBox(
                     height: 50,
                   ),
-                  Text("If u dont have an account"),
-                  SizedBox(
+                  const Text("If u dont have an account"),
+                  const SizedBox(
                     height: 10,
                   ),
                   TextButton(
-                      onPressed: () => newsr(context), child: Text("SignUp")),
+                      onPressed: () => newsr(context), child: const Text("SignUp")),
                 ],
               )),
         ),

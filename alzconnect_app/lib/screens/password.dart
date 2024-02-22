@@ -1,3 +1,5 @@
+// ignore_for_file: non_constant_identifier_names
+
 import 'package:flutter/material.dart';
 
 import 'package:spryzen/screens/setting_screen.dart';
@@ -5,8 +7,8 @@ import 'package:spryzen/screens/setting_screen.dart';
 import '../data.dart';
 
 class Password extends StatefulWidget {
+  const Password(this.Passwordtitle, {super.key});
   final String Passwordtitle;
-  Password(this.Passwordtitle);
 
   @override
   State<Password> createState() => _PasswordState();
@@ -15,11 +17,12 @@ class Password extends StatefulWidget {
 class _PasswordState extends State<Password> {
   bool is_visibility = false;
   bool is_visibility2 = false;
-  TextEditingController _password = TextEditingController();
-  TextEditingController _confirm = TextEditingController();
-  TextEditingController _newpassword = TextEditingController();
+  final TextEditingController _password = TextEditingController();
+  final TextEditingController _confirm = TextEditingController();
+  final TextEditingController _newpassword = TextEditingController();
   final formkey = GlobalKey<FormState>();
 
+  @override
   void dispose() {
     _password.dispose();
     _newpassword.dispose();
@@ -39,20 +42,20 @@ class _PasswordState extends State<Password> {
 
   @override
   Widget build(BuildContext context) {
-    final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
+    //final GlobalKey<ScaffoldState> _scaffoldKey = GlobalKey<ScaffoldState>();
     return Scaffold(
         appBar: AppBar(title: Text(widget.Passwordtitle)),
         body: Padding(
-          padding: EdgeInsets.all(16),
+          padding: const EdgeInsets.all(16),
           child: SingleChildScrollView(
             child: Form(
               key: formkey,
               child: Column(
                 children: [
-                  Padding(padding: EdgeInsets.all(10)),
-                  Padding(padding: EdgeInsets.all(10)),
-                  Text('Enter the new password'),
-                  SizedBox(
+                  const Padding(padding: EdgeInsets.all(10)),
+                  const Padding(padding: EdgeInsets.all(10)),
+                  const Text('Enter the new password'),
+                  const SizedBox(
                     height: 20,
                   ),
                   TextFormField(
@@ -67,7 +70,7 @@ class _PasswordState extends State<Password> {
                     obscureText: !is_visibility,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.password_outlined),
+                        prefixIcon: const Icon(Icons.password_outlined),
                         suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -75,23 +78,23 @@ class _PasswordState extends State<Password> {
                             });
                           },
                           icon: is_visibility
-                              ? Icon(
+                              ? const Icon(
                                   Icons.visibility,
                                   color: Colors.blue,
                                 )
-                              : Icon(
+                              : const Icon(
                                   Icons.visibility_off,
                                   color: Colors.grey,
                                 ),
                         ),
-                        contentPadding: EdgeInsets.all(15),
-                        border: OutlineInputBorder(
+                        contentPadding: const EdgeInsets.all(15),
+                        border:const  OutlineInputBorder(
                           borderRadius: BorderRadius.horizontal(),
                         )),
                   ),
-                  Padding(padding: EdgeInsets.all(10)),
-                  Text('Confirm the password'),
-                  SizedBox(
+                  const Padding(padding: EdgeInsets.all(10)),
+                  const Text('Confirm the password'),
+                  const SizedBox(
                     height: 20,
                   ),
                   TextFormField(
@@ -106,7 +109,7 @@ class _PasswordState extends State<Password> {
                     obscureText: !is_visibility2,
                     keyboardType: TextInputType.text,
                     decoration: InputDecoration(
-                        prefixIcon: Icon(Icons.password_outlined),
+                        prefixIcon: const Icon(Icons.password_outlined),
                         suffixIcon: IconButton(
                           onPressed: () {
                             setState(() {
@@ -114,21 +117,21 @@ class _PasswordState extends State<Password> {
                             });
                           },
                           icon: is_visibility2
-                              ? Icon(
+                              ?const  Icon(
                                   Icons.visibility,
                                   color: Colors.blue,
                                 )
-                              : Icon(
+                              :const  Icon(
                                   Icons.visibility_off,
                                   color: Colors.grey,
                                 ),
                         ),
-                        contentPadding: EdgeInsets.all(15),
-                        border: OutlineInputBorder(
+                        contentPadding:const  EdgeInsets.all(15),
+                        border: const OutlineInputBorder(
                           borderRadius: BorderRadius.horizontal(),
                         )),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 30,
                   ),
                   ElevatedButton(
@@ -142,7 +145,7 @@ class _PasswordState extends State<Password> {
                           ScaffoldMessenger.of(context).showSnackBar(snackBar);
                         }
                       },
-                      child: Text('Submit')),
+                      child: const Text('Submit')),
                 ],
               ),
             ),

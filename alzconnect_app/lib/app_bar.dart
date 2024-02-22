@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:spryzen/draw.dart';
 import 'package:spryzen/screens/mainscreen.dart';
-import 'package:spryzen/screens/login_screen.dart';
-import 'package:spryzen/screens/imagescreen.dart';
+//import 'package:spryzen/screens/login_screen.dart';
+//import 'package:spryzen/screens/imagescreen.dart';
 import 'package:spryzen/screens/videoscreenmain.dart';
 
 class APPBAR extends StatefulWidget {
@@ -40,14 +40,14 @@ class _APPBARState extends State<APPBAR> {
             actions: [
               IconButton(
                 onPressed: () {
-                  print('pressed');
+                  //print('pressed');
                 },
                 icon: const Icon(Icons.account_circle_rounded),
               ),
             ]),
-        drawer: appdrawer(),
+        drawer: const appdrawer(),
         body: TabBarView(
-          children: [mainscreen(), mainvideoscreen()],
+          children: [const mainscreen(), mainvideoscreen()],
         ),
       ),
     );

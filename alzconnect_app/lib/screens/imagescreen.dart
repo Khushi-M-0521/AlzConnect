@@ -1,15 +1,19 @@
+// ignore_for_file: camel_case_types, library_private_types_in_public_api
+
 import 'dart:convert';
 import 'dart:io';
 import 'dart:typed_data';
 import 'package:flutter/material.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:spryzen/app_bar.dart';
-import 'package:spryzen/screens/mainscreen.dart';
+//import 'package:spryzen/screens/mainscreen.dart';
 
 import '../data.dart';
 import '../image_get.dart';
 
 class imagescreen extends StatefulWidget {
+  const imagescreen({super.key});
+
   @override
   _imagescreenState createState() => _imagescreenState();
 }
@@ -21,13 +25,13 @@ class _imagescreenState extends State<imagescreen> {
   void _pickImagebase() async {
     final XFile? image = await _picker.pickImage(source: ImageSource.gallery);
     if (image == null) return;
-    Uint8List imagebyte = await image!.readAsBytes();
+    Uint8List imagebyte = await image.readAsBytes();
     String base64 = base64Encode(imagebyte);
-    print(base64);
+    //print(base64);
     bool img = await Data.insertImage(base64);
     if (img) {
       imageget();
-      print("imagestored");
+      //print("imagestored");
     }
     
   }
@@ -36,7 +40,7 @@ class _imagescreenState extends State<imagescreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: Text("Image Picker"),
+          title: const Text("Image Picker"),
         ),
         body: Container(
             child: imageFile == null
@@ -50,7 +54,7 @@ class _imagescreenState extends State<imagescreen> {
                             _pickImagebase();
                             newscreen(context);
                           },
-                          child: Text("PICK FROM GALLERY"),
+                          child: const Text("PICK FROM GALLERY"),
                         ),
                         Container(
                           height: 40.0,
@@ -58,18 +62,16 @@ class _imagescreenState extends State<imagescreen> {
                       ],
                     ),
                   )
-                : Container(
-                    child: Image.file(
-                      imageFile!,
-                      fit: BoxFit.cover,
-                    ),
-                  )));
+                : Image.file(
+                  imageFile!,
+                  fit: BoxFit.cover,
+                )));
   }
 
   void newscreen(BuildContext context) {
     Navigator.of(context).push(MaterialPageRoute(builder: (_) {
-      var image;
-      return APPBAR();
+      //var image;
+      return const APPBAR();
     }));
   }
 }

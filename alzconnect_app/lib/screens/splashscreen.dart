@@ -1,8 +1,10 @@
+// ignore_for_file: camel_case_types
+
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:spryzen/screens/login_screen.dart';
-import 'package:spryzen/screens/setting_screen.dart';
-import 'package:spryzen/screens/signupscreen.dart';
+//import 'package:spryzen/screens/setting_screen.dart';
+//import 'package:spryzen/screens/signupscreen.dart';
 
 class Splash_screen extends StatefulWidget {
   const Splash_screen({super.key});
@@ -30,17 +32,18 @@ class _splashscreenState extends State<Splash_screen>
     super.dispose();
   }
 
+  @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Container(
-          decoration: BoxDecoration(
+          decoration: const BoxDecoration(
             gradient: LinearGradient(
               colors: [Colors.white, Colors.white],
               begin: Alignment.topRight,
               end: Alignment.bottomLeft,
             ),
           ),
-          child: Column(
+          child: const Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [Image(image: AssetImage('assets/images/icon.jpeg'))],
           )),
